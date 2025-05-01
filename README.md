@@ -1,6 +1,5 @@
-# leetcode-practice
 
-## DFS
+# DFS
 
 ```text
 function DFS(i, j):
@@ -13,7 +12,7 @@ function DFS(i, j):
         DFS(i + dx, j + dy)
 ```
 
-## Binary Search Patterns: `[left, right)` vs `[left, right]`
+# Binary Search Patterns: `[left, right)` vs `[left, right]`
 
 Binary search is a fundamental algorithm used to find the position of a target value in a sorted array. There are two common interval notations used when implementing binary search.
 
@@ -78,7 +77,7 @@ class Solution(object):
 - Return value is right + 1 (which equals left after the loop ends)
 
 
-##  Common Rule of Thumb
+#  Common Rule of Thumb
 
 | Type        | Mutable? | Example                  |
 |-------------|----------|--------------------------|
