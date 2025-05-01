@@ -18,4 +18,4 @@ class Solution(object):
                 path.pop()
         backtrack(path,options)
         return combinations
-        
+        #when it comes to the global variable be careful to use the duplicate list(path) or combinations will keep append the same list(by reference)
