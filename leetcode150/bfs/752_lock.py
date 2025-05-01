@@ -39,4 +39,10 @@ class Solution(object):
         return -1
 
 
+
+
+        # optimze by mod so u don't have to create a dict
+
+        for move in [-1, 1]:
+                    new_digit = (digit + move) % 10
         
