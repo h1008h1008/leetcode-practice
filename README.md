@@ -123,4 +123,59 @@ print(int(-7 / 2))      # -3  ✅ Truncate toward zero
 print(-7 // 2)          # -4  ❌ Floor division (rounds down)
 print(int(float(-7) / 2))  # -3 ✅ Consistent truncation
 
-- You need to be really careful about mutable when update answers 
+- You need to be really careful about mutable when update
+
+```
+## ✅ Muttable problem
+
+You're right to worry about "modifying one cell affecting others" — that **can happen in Python**, but not in this case.
+
+### ✅ Safe Case: Immutable Values
+
+```python
+counts = [0] * 26
+counts[0] = 99
+print(counts)
+```
+
+**Output:**
+
+```python
+[99, 0, 0, 0, ..., 0]  # Only index 0 is changed
+```
+
+This works correctly because `0` is an **immutable value**, and each index gets a **distinct integer object**.
+
+---
+
+### ❗ Dangerous Case: Shared References in 2D Lists
+
+If you write:
+
+```python
+row = [[0] * 5] * 3
+row[0][0] = 1
+```
+
+You’ll get:
+
+```python
+[[1, 0, 0, 0, 0],
+ [1, 0, 0, 0, 0],
+ [1, 0, 0, 0, 0]]  # ❌ All rows changed
+```
+
+This is because you copied **the same inner list reference** three times.
+
+---
+
+### ✅ Correct Way for 2D Lists
+
+To get independent sublists:
+
+```python
+row = [[0] * 5 for _ in range(3)]
+```
+
+This creates a **new list for each row**, so modifying one doesn't affect the others.
+
