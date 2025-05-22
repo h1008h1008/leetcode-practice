@@ -95,4 +95,32 @@ class Solution(object):
 
 - **Mutable** objects can be changed in place without creating a new object.
 - **Immutable** objects require re-assignment if you want to change their value.
+
+## 📘 Types and Python Implementations
+
+| Type              | Description                                       | Python Implementation       |
+|-------------------|---------------------------------------------------|------------------------------|
+| Truncate Toward 0 | Removes the decimal part, rounds **toward zero**  | `int(a / b)` ✅              |
+| Floor Division     | Always rounds **down toward negative infinity**   | `a // b` ✅                  |
+
+---
+
+## 📌 Summary: Which to Use for What?
+
+| Use Case                                | Recommended Syntax        | Notes                                   |
+|-----------------------------------------|----------------------------|-----------------------------------------|
+| Truncate toward zero (e.g. LeetCode)     | `int(a / b)`               | Common in integer division ✅            |
+| Floor division (mathematical floor)     | `a // b`                   | Python’s default for `//`               |
+| Ensure correct result with floats       | `int(float(a) / b)`        | Safely handles float division behavior  |
+
+---
+
+## 🧪 Code Examples
+
+```python
+print(int(7 / 2))       # 3
+print(int(-7 / 2))      # -3  ✅ Truncate toward zero
+print(-7 // 2)          # -4  ❌ Floor division (rounds down)
+print(int(float(-7) / 2))  # -3 ✅ Consistent truncation
+
 - You need to be really careful about mutable when update answers 
